@@ -12,10 +12,10 @@ const StockSearchCard = () => {
   const API_KEY = process.env.NEXT_PUBLIC_ALPHAVANTAGE_API_KEY
   const [symbol, setSymbol] = useState('BTC')
   const [series, setSeries] = useState<any[]>([])
-  const [categories, setCategories] = useState<string[]>([])
+  // const [categories, setCategories] = useState<string[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [themeMode, setThemeMode] = useState<'light' | 'dark'>('light')
+  // const [themeMode, setThemeMode] = useState<'light' | 'dark'>('light')
 
   useEffect(() => {
     // Detect system theme

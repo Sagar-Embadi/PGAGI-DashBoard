@@ -29,7 +29,7 @@ export default async function Ecommerce() {
       </div>
       <div className="col-span-12">
         <main className="bg-white dark:bg-black min-h-screen text-white p-8">
-              <h1 className="text-3xl font-bold mb-6">🎬 Trending Movies</h1>
+              <h1 className="text-3xl font-bold mb-6 text-black dark:text-white">🎬 Trending Movies</h1>
               <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {movies.map((movie) => (
                   <MovieCard key={movie.id} movie={movie} />

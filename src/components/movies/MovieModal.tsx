@@ -11,7 +11,6 @@ export interface Movie {
   popularity: number;
 }
 
-import React, { useEffect } from 'react';
 
 type Props = {
   movie: Movie;
@@ -20,14 +19,6 @@ type Props = {
 
 const MovieModal = ({ movie, onClose }: Props) => {
   if (!movie) return null;
-
-  useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-    window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
-  }, [onClose]);
 
   return (
     <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center px-4">

@@ -4,6 +4,7 @@
 import React, { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import axios from 'axios'
+import { ApexOptions } from 'apexcharts';
 
 const ApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
@@ -69,45 +70,86 @@ const StockSearchCard = () => {
   }
 
   // Chart options with theme support
-  const chartOptions = {
-    chart: {
-      type: 'candlestick',
-      background: 'transparent',
-      toolbar: { show: true }
+  // const chartOptions = {
+  //   chart: {
+  //     type: 'candlestick',
+  //     background: 'transparent',
+  //     toolbar: { show: true }
+  //   },
+  //   theme: {
+  //     mode: themeMode
+  //   },
+  //   xaxis: {
+  //     type: 'category',
+  //     categories,
+  //     labels: {
+  //       style: {
+  //         colors: themeMode === 'dark' ? '#E5E7EB' : '#374151'
+  //       }
+  //     }
+  //   },
+  //   yaxis: {
+  //     labels: {
+  //       style: {
+  //         colors: themeMode === 'dark' ? '#E5E7EB' : '#374151'
+  //       }
+  //     }
+  //   },
+  //   grid: {
+  //     borderColor: themeMode === 'dark' ? '#374151' : '#E5E7EB'
+  //   },
+  //   title: {
+  //     text: `Candlestick Chart: ${symbol}`,
+  //     align: 'left',
+  //     style: {
+  //       color: themeMode === 'dark' ? '#D1D5DB' : '#111827'
+  //     }
+  //   },
+  //   tooltip: {
+  //     theme: themeMode
+  //   }
+  // }
+  const chartOptions: ApexOptions = {
+  chart: {
+    type: 'candlestick', // ✅ now allowed
+    background: '#1F2937',
+    toolbar: {
+      show: false,
     },
-    theme: {
-      mode: themeMode
-    },
-    xaxis: {
-      type: 'category',
-      categories,
-      labels: {
-        style: {
-          colors: themeMode === 'dark' ? '#E5E7EB' : '#374151'
-        }
-      }
-    },
-    yaxis: {
-      labels: {
-        style: {
-          colors: themeMode === 'dark' ? '#E5E7EB' : '#374151'
-        }
-      }
-    },
-    grid: {
-      borderColor: themeMode === 'dark' ? '#374151' : '#E5E7EB'
-    },
-    title: {
-      text: `Candlestick Chart: ${symbol}`,
-      align: 'left',
+  },
+  theme: {
+    mode: 'dark', // or 'light'
+  },
+  xaxis: {
+    type: 'category',
+    categories: ['Mon', 'Tue', 'Wed'],
+    labels: {
       style: {
-        color: themeMode === 'dark' ? '#D1D5DB' : '#111827'
-      }
+        colors: '#fff',
+      },
     },
-    tooltip: {
-      theme: themeMode
-    }
-  }
+  },
+  yaxis: {
+    labels: {
+      style: {
+        colors: '#fff',
+      },
+    },
+  },
+  grid: {
+    borderColor: '#374151',
+  },
+  title: {
+    text: 'Stock Price',
+    style: {
+      color: '#fff',
+    },
+  },
+  tooltip: {
+    enabled: true,
+  },
+};
+
 
   return (
     <div className="w-full p-4 rounded-xl shadow bg-white text-black dark:bg-gray-800 dark:text-white transition-colors">

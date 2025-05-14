@@ -10,7 +10,8 @@ import { ApexOptions } from 'apexcharts';
 const ApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const StockSearchCard = () => {
-  const API_KEY = process.env.NEXT_PUBLIC_ALPHAVANTAGE_API_KEY
+  const API_KEY = process.env.NEXT_PUBLIC_ALPHA_VANTAGE_KEY
+  console.log(API_KEY)
   const [symbol, setSymbol] = useState('BTC')
   const [series, setSeries] = useState<any[]>([])
   const [themeMode, setThemeMode] = useState<'light' | 'dark'>('light')
@@ -72,85 +73,85 @@ const StockSearchCard = () => {
   }
 
   // Chart options with theme support
-  // const chartOptions = {
-  //   chart: {
-  //     type: 'candlestick',
-  //     background: 'transparent',
-  //     toolbar: { show: true }
-  //   },
-  //   theme: {
-  //     mode: themeMode
-  //   },
-  //   xaxis: {
-  //     type: 'category',
-  //     categories,
-  //     labels: {
-  //       style: {
-  //         colors: themeMode === 'dark' ? '#E5E7EB' : '#374151'
-  //       }
-  //     }
-  //   },
-  //   yaxis: {
-  //     labels: {
-  //       style: {
-  //         colors: themeMode === 'dark' ? '#E5E7EB' : '#374151'
-  //       }
-  //     }
-  //   },
-  //   grid: {
-  //     borderColor: themeMode === 'dark' ? '#374151' : '#E5E7EB'
-  //   },
-  //   title: {
-  //     text: `Candlestick Chart: ${symbol}`,
-  //     align: 'left',
-  //     style: {
-  //       color: themeMode === 'dark' ? '#D1D5DB' : '#111827'
-  //     }
-  //   },
-  //   tooltip: {
-  //     theme: themeMode
-  //   }
-  // }
-  const chartOptions: ApexOptions = {
-  chart: {
-    type: 'candlestick', // ✅ now allowed
-    background: '#1F2937',
-    toolbar: {
-      show: false,
+  const chartOptions = {
+    chart: {
+      type: 'candlestick',
+      background: 'transparent',
+      toolbar: { show: true }
     },
-  },
-  theme: {
-    mode: 'dark', // or 'light'
-  },
-  xaxis: {
-    type: 'category',
-    categories: ['Mon', 'Tue', 'Wed'],
-    labels: {
+    theme: {
+      mode: themeMode
+    },
+    xaxis: {
+      type: 'category',
+      categories,
+      labels: {
+        style: {
+          colors: themeMode === 'dark' ? '#E5E7EB' : '#374151'
+        }
+      }
+    },
+    yaxis: {
+      labels: {
+        style: {
+          colors: themeMode === 'dark' ? '#E5E7EB' : '#374151'
+        }
+      }
+    },
+    grid: {
+      borderColor: themeMode === 'dark' ? '#374151' : '#E5E7EB'
+    },
+    title: {
+      text: `Candlestick Chart: ${symbol}`,
+      align: 'left',
       style: {
-        colors: '#fff',
-      },
+        color: themeMode === 'dark' ? '#D1D5DB' : '#111827'
+      }
     },
-  },
-  yaxis: {
-    labels: {
-      style: {
-        colors: '#fff',
-      },
-    },
-  },
-  grid: {
-    borderColor: '#374151',
-  },
-  title: {
-    text: 'Stock Price',
-    style: {
-      color: '#fff',
-    },
-  },
-  tooltip: {
-    enabled: true,
-  },
-};
+    tooltip: {
+      theme: themeMode
+    }
+  }
+//   const chartOptions: ApexOptions = {
+//   chart: {
+//     type: 'candlestick', // ✅ now allowed
+//     background: '#1F2937',
+//     toolbar: {
+//       show: false,
+//     },
+//   },
+//   theme: {
+//     mode: 'dark', // or 'light'
+//   },
+//   xaxis: {
+//     type: 'category',
+//     categories: ['Mon', 'Tue', 'Wed'],
+//     labels: {
+//       style: {
+//         colors: '#fff',
+//       },
+//     },
+//   },
+//   yaxis: {
+//     labels: {
+//       style: {
+//         colors: '#fff',
+//       },
+//     },
+//   },
+//   grid: {
+//     borderColor: '#374151',
+//   },
+//   title: {
+//     text: 'Stock Price',
+//     style: {
+//       color: '#fff',
+//     },
+//   },
+//   tooltip: {
+//     enabled: true,
+//   },
+// };
 
 
   return (

@@ -4,7 +4,7 @@ interface WeatherOverviewProps {
 }
 
 const WeatherOverview = ({ data }: WeatherOverviewProps) => (
-  <div className="bg-gray-700 text-white p-6 rounded-2xl shadow-lg flex items-center justify-around">
+  <div className="bg-gray-700 text-white p-6 rounded-2xl shadow-lg flex items-center justify-around hover:bg-gray-600">
     <div>
         <h1 className="text-6xl font-bold">{data.name}</h1>
     <p className="text-2xl mt-3">Chance of rain: {data.rain?.['1h'] || 0}%</p>

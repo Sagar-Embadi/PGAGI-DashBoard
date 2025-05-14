@@ -69,18 +69,20 @@ const WeatherDashboard = () => {
         {weather && forecast && (
           <>
             <WeatherOverview data={weather} />
-            <AirCondition data={weather} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <AirCondition data={weather} />
+              <div>
+                <div className="w-120 h-100 bg-gray-800 rounded-lg p-4">
+                  <h2 className="text-xl font-semibold mb-4">Forecast</h2>
+                  {forecast && (
+                    <ForecastGraph data={forecast} />
+                  )}
+                </div>
+              </div>
+            </div>
           </>
         )}
       </main>
-      <div>
-        <div className="w-96 h-full bg-gray-800 rounded-lg p-4">
-          <h2 className="text-xl font-semibold mb-4">Forecast</h2>
-          {forecast && (
-            <ForecastGraph data={forecast} />
-          )}
-        </div>
-      </div>
     </div>
   );
 };

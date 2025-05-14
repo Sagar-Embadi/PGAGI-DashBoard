@@ -28,6 +28,7 @@ const navItems: NavItem[] = [
       { name: "Weather", path: "/weather", pro: false },
       { name: "News", path: "/news", pro: false },
       { name: "Finance", path: "/finance", pro: false },
+      { name: "Movies", path: "/movies", pro: false },
     ],
   },
   {

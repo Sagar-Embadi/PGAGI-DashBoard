@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import { Dialog } from '@headlessui/react';
 
 type Props = {
   article: any;
@@ -13,9 +12,9 @@ const NewsModal = ({ article, onClose }: Props) => {
   return (
     <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
       <div className="bg-white dark:bg-gray-900 rounded-xl w-full max-w-2xl p-6">
-        <Dialog.displayName className="text-xl font-semibold mb-2">
+        <h2 className="text-xl font-semibold mb-2">
           {article.title}
-        </Dialog.displayName>
+        </h2>
         {article.urlToImage && (
           <img src={article.urlToImage} className="w-full mb-3 rounded" alt="full" />
         )}

@@ -14,11 +14,11 @@ const StockSearchCard = () => {
   const [symbol, setSymbol] = useState('BTC')
   const [series, setSeries] = useState<any[]>([])
   const [themeMode, setThemeMode] = useState<'light' | 'dark'>('light')
-  // const [categories, setCategories] = useState<string[]>([])
+  const [categories, setCategories] = useState<string[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   // const [themeMode, setThemeMode] = useState<'light' | 'dark'>('light')
-
+  console.log(categories)
   useEffect(() => {
     // Detect system theme
     const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches

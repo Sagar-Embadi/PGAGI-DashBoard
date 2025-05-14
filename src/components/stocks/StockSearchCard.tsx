@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
@@ -12,6 +13,7 @@ const StockSearchCard = () => {
   const API_KEY = process.env.NEXT_PUBLIC_ALPHAVANTAGE_API_KEY
   const [symbol, setSymbol] = useState('BTC')
   const [series, setSeries] = useState<any[]>([])
+  const [themeMode, setThemeMode] = useState<'light' | 'dark'>('light')
   // const [categories, setCategories] = useState<string[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')

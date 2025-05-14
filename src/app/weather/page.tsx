@@ -31,6 +31,9 @@ const WeatherDashboard = () => {
       setForecast(forecastData.list);
     } catch (err: any) {
       setError('Could not fetch weather data.');
+      if (err as Error){
+        console.error(err.message);
+      }
     } finally {
       setLoading(false);
     }

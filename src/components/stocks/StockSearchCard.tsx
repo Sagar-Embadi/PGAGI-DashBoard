@@ -11,7 +11,6 @@ const ApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
 const StockSearchCard = () => {
   const API_KEY = process.env.NEXT_PUBLIC_ALPHA_VANTAGE_KEY
-  console.log(API_KEY)
   const [symbol, setSymbol] = useState('BTC')
   const [series, setSeries] = useState<any[]>([])
   const [themeMode, setThemeMode] = useState<'light' | 'dark'>('light')
@@ -19,7 +18,6 @@ const StockSearchCard = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   // const [themeMode, setThemeMode] = useState<'light' | 'dark'>('light')
-  console.log(categories)
   useEffect(() => {
     // Detect system theme
     const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches

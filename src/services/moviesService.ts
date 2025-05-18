@@ -19,9 +19,7 @@ const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
 
 export async function fetchTrendingMovies(): Promise<TMDBResponse> {
   try {
-  const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`);
-  console.log(res);
-  
+  const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`);  
   if (!res.ok) throw new Error("API response not OK");
   return res.json();
 } catch (err) {

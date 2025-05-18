@@ -25,7 +25,6 @@ const WeatherDashboard = () => {
       const weatherData = await fetchWeather(city);
       if (!weatherData.coord) throw new Error('Invalid city');
       const forecastData = await fetchForecast(weatherData.coord.lat, weatherData.coord.lon);
-      console.log(forecastData);
       if (!weatherData || !weatherData.main) throw new Error('Not found');
       setWeather(weatherData);
       setForecast(forecastData.list);

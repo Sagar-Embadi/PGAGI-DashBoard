@@ -16,10 +16,16 @@ export interface TMDBResponse {
 
 
 const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
-const BASE_URL = 'https://api.themoviedb.org/3';
 
 export async function fetchTrendingMovies(): Promise<TMDBResponse> {
-  const res = await fetch(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}`);
-  if (!res.ok) throw new Error('Failed to fetch TMDB data');
+  try {
+  const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`);
+  console.log(res);
+  
+  if (!res.ok) throw new Error("API response not OK");
   return res.json();
+} catch (err) {
+  console.error("Fetch error:", err);
+  throw err;
+}
 }

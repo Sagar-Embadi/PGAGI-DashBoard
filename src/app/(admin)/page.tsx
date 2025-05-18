@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   description: "This is PG-AGI Dashboard Template",
 };
 
-export default async function Ecommerce() {
+export default async function Page() {
   const data = await fetchTrendingMovies();
     const movies = data.results;
   return (
     <div className="grid grid-cols-12 gap-3 md:gap-6">
-      <div className="col-span-8 space-y-6 xl:col-span-6">
+      <div className="col-span-12 space-y-6 xl:col-span-6">
         <WeatherSearchCard/>
       </div>
 

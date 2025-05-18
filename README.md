@@ -135,7 +135,7 @@ Dashboard	Dark Mode
 </table>
 
 ## Recorded Video
-
+[▶️ Watch Loom Video](https://www.loom.com/share/97396b0753a241bbbb69f59da695477f?sid=3205a813-e4a1-4747-8f98-5916806557d4)
 [🎥 Download demo video](./public/videos/20250514-2056-15.2993501.mp4)
 
 ## 📝 Additional Notes
